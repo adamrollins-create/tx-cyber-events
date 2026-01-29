@@ -1,0 +1,66 @@
+{
+  "run_started": "2026-01-29T23:27:42.814845Z",
+  "sources_total": 36,
+  "sources_ok": 30,
+  "sources_failed": [
+    {
+      "source_url": "https://oneisac.org/event-calendar/",
+      "error": "HTTP 403"
+    },
+    {
+      "source_url": "https://oneisac.org/industry-events/",
+      "error": "HTTP 403"
+    },
+    {
+      "source_url": "https://southtexasissa.starchapter.com/meetinginfo.php",
+      "error": "HTTP 403"
+    },
+    {
+      "source_url": "https://govevents.com/",
+      "error": "HTTP 403"
+    },
+    {
+      "source_url": "https://ismg.events/summit/cybersecurity-summit-datasecurity-2025/",
+      "error": "HTTP 404"
+    },
+    {
+      "source_url": "https://www.eventbrite.com/d/tx--austin/cyber-security/",
+      "error": "HTTP 405"
+    }
+  ],
+  "needs_manual_review": [
+    {
+      "source_url": "https://www.meetup.com/dallas-hackers-association/",
+      "reason": "Likely JS-rendered or bot-protected; consider API/headless browser."
+    },
+    {
+      "source_url": "https://www.meetup.com/dallas-the-open-web-application-security-project-meetup/",
+      "reason": "Likely JS-rendered or bot-protected; consider API/headless browser."
+    },
+    {
+      "source_url": "https://www.meetup.com/dc512atx/",
+      "reason": "Likely JS-rendered or bot-protected; consider API/headless browser."
+    },
+    {
+      "source_url": "https://www.meetup.com/owasp-austin-chapter/",
+      "reason": "Likely JS-rendered or bot-protected; consider API/headless browser."
+    },
+    {
+      "source_url": "https://www.meetup.com/austin-application-security-meetup-group/",
+      "reason": "Likely JS-rendered or bot-protected; consider API/headless browser."
+    },
+    {
+      "source_url": "https://www.meetup.com/owasp-houston/",
+      "reason": "Likely JS-rendered or bot-protected; consider API/headless browser."
+    },
+    {
+      "source_url": "https://www.meetup.com/owasp-sanantonio/",
+      "reason": "Likely JS-rendered or bot-protected; consider API/headless browser."
+    },
+    {
+      "source_url": "https://www.meetup.com/find/us--tx--san-antonio/cybersecurity/",
+      "reason": "Likely JS-rendered or bot-protected; consider API/headless browser."
+    }
+  ],
+  "events_extracted": 40
+}

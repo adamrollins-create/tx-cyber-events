@@ -1,0 +1,325 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+PRODID:-//Texas Cyber Events Monitor//EN
+BEGIN:VEVENT
+UID:cfbdfacefcc439a8@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:AI-Augmented Cyber Defense & Rapid Prototyping Workshop
+DTSTART:20260131T100000
+DESCRIPTION:ISACA — Greater Houston Chapter | City: Houston | Source: https://engage.isaca.org/greaterhoustonchapter/events/calendar | Registration: https://engage.isaca.org/greaterhoustonchapter/events/eventdescription?CalendarEventKey=aef3a8aa-8369-4443-9924-019b053acb5b&CommunityKey=60fadc89-9591-440d-95ec-a45382a39195&Home=%2fgreaterhoustonchapter%2fevents%2fcalendar
+URL:https://engage.isaca.org/greaterhoustonchapter/events/eventdescription?CalendarEventKey=aef3a8aa-8369-4443-9924-019b053acb5b&CommunityKey=60fadc89-9591-440d-95ec-a45382a39195&Home=%2fgreaterhoustonchapter%2fevents%2fcalendar
+END:VEVENT
+BEGIN:VEVENT
+UID:2f3fb45bdc055bf3@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:Chapter Events List
+DTSTART:20260131T100000
+DESCRIPTION:ISACA — Greater Houston Chapter | City: Dallas | Source: https://engage.isaca.org/greaterhoustonchapter/events/calendar | Registration: https://engage.isaca.org/greaterhoustonchapter/events/calendar#MPContentArea
+URL:https://engage.isaca.org/greaterhoustonchapter/events/calendar#MPContentArea
+END:VEVENT
+BEGIN:VEVENT
+UID:69d16a39339a88f4@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:Chapter Events List
+DTSTART:20260131T100000
+DESCRIPTION:ISACA — Greater Houston Chapter | City: Dallas | Source: https://engage.isaca.org/greaterhoustonchapter/events/calendar | Registration: https://engage.isaca.org/greaterhoustonchapter/events/calendar#MainCopy_ctl06_CalendarEventsList_AddTagAnchorLink_0
+URL:https://engage.isaca.org/greaterhoustonchapter/events/calendar#MainCopy_ctl06_CalendarEventsList_AddTagAnchorLink_0
+END:VEVENT
+BEGIN:VEVENT
+UID:3998244b56fa07c6@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:January 2026
+DTSTART:20260131T100000
+DESCRIPTION:ISACA — Greater Houston Chapter | City: Dallas | Source: https://engage.isaca.org/greaterhoustonchapter/events/calendar | Registration: https://engage.isaca.org/greaterhoustonchapter/events/calendar#MainCopy_ctl06_CalendarEventsList_AddTagAnchorLink_0
+URL:https://engage.isaca.org/greaterhoustonchapter/events/calendar#MainCopy_ctl06_CalendarEventsList_AddTagAnchorLink_0
+END:VEVENT
+BEGIN:VEVENT
+UID:feb1c171094c0ce7@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:Use the "Show Filter" button below to search for more events:
+DTSTART:20260131T100000
+DESCRIPTION:ISACA — Greater Houston Chapter | City: Dallas | Source: https://engage.isaca.org/greaterhoustonchapter/events/calendar | Registration: https://engage.isaca.org/greaterhoustonchapter/events/calendar#MainCopy_ctl06_CalendarEventsList_AddTagAnchorLink_0
+URL:https://engage.isaca.org/greaterhoustonchapter/events/calendar#MainCopy_ctl06_CalendarEventsList_AddTagAnchorLink_0
+END:VEVENT
+BEGIN:VEVENT
+UID:0c5bd174066d7467@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:When: Jan 31\, 2026 from 10:00 to 14:00 (CT) Where: San Jacinto
+DTSTART:20260131T100000
+DESCRIPTION:ISACA — Greater Houston Chapter | City: Houston | Source: https://engage.isaca.org/greaterhoustonchapter/events/calendar | Registration: https://engage.isaca.org/greaterhoustonchapter/home
+URL:https://engage.isaca.org/greaterhoustonchapter/home
+END:VEVENT
+BEGIN:VEVENT
+UID:a8e4675f0223b41f@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:AI-Augmented Cyber Defense & Rapid Prototyping Workshop 2:30PM - 6:30PM
+DTSTART:20260131T143000
+DESCRIPTION:ISACA — Greater Houston Chapter | City: Houston | Source: https://engage.isaca.org/greaterhoustonchapter/events/calendar | Registration: https://engage.isaca.org/greaterhoustonchapter/events/eventdescription?CalendarEventKey=dd32642c-be1f-46ea-9c7f-019c053f9d9a&CommunityKey=60fadc89-9591-440d-95ec-a45382a39195&Home=%2fgreaterhoustonchapter%2fevents%2fcalendar
+URL:https://engage.isaca.org/greaterhoustonchapter/events/eventdescription?CalendarEventKey=dd32642c-be1f-46ea-9c7f-019c053f9d9a&CommunityKey=60fadc89-9591-440d-95ec-a45382a39195&Home=%2fgreaterhoustonchapter%2fevents%2fcalendar
+END:VEVENT
+BEGIN:VEVENT
+UID:dde838b6c0498921@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:When: Jan 31\, 2026 from 14:30 to 18:30 (CST) Where: San Jacinto
+DTSTART:20260131T143000
+DESCRIPTION:ISACA — Greater Houston Chapter | City: Houston | Source: https://engage.isaca.org/greaterhoustonchapter/events/calendar | Registration: https://engage.isaca.org/greaterhoustonchapter/home
+URL:https://engage.isaca.org/greaterhoustonchapter/home
+END:VEVENT
+BEGIN:VEVENT
+UID:5ec5554b847b18e0@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:America/Chicago February 2026 ISC2 Alamo Chapter Meeting February 05\, 2026 12:00 PM
+DTSTART:20260205T120000
+DESCRIPTION:(ISC)² — Alamo (San Antonio) | City: San Antonio | Source: https://alamoisc2.org/events | Registration: https://alamoisc2.org/event-6535474
+URL:https://alamoisc2.org/event-6535474
+END:VEVENT
+BEGIN:VEVENT
+UID:66fdf5173a5346c1@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:Chapter Events List
+DTSTART:20260206T090000
+DESCRIPTION:ISACA — North Texas Chapter | City: Dallas | Source: https://engage.isaca.org/northtexaschapter/events/calendar | Registration: https://engage.isaca.org/northtexaschapter/events/calendar#MPContentArea
+URL:https://engage.isaca.org/northtexaschapter/events/calendar#MPContentArea
+END:VEVENT
+BEGIN:VEVENT
+UID:2e4953c483b0ba7c@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:Chapter Events List
+DTSTART:20260206T090000
+DESCRIPTION:ISACA — North Texas Chapter | City: Dallas | Source: https://engage.isaca.org/northtexaschapter/events/calendar | Registration: https://engage.isaca.org/northtexaschapter/events/calendar#MainCopy_ctl07_CalendarEventsList_AddTagAnchorLink_0
+URL:https://engage.isaca.org/northtexaschapter/events/calendar#MainCopy_ctl07_CalendarEventsList_AddTagAnchorLink_0
+END:VEVENT
+BEGIN:VEVENT
+UID:d67d7ea842db78a6@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:February 2026
+DTSTART:20260206T090000
+DESCRIPTION:ISACA — North Texas Chapter | City: Dallas | Source: https://engage.isaca.org/northtexaschapter/events/calendar | Registration: https://engage.isaca.org/northtexaschapter/events/calendar#MainCopy_ctl07_CalendarEventsList_AddTagAnchorLink_0
+URL:https://engage.isaca.org/northtexaschapter/events/calendar#MainCopy_ctl07_CalendarEventsList_AddTagAnchorLink_0
+END:VEVENT
+BEGIN:VEVENT
+UID:3bb2d17efc2c185b@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:Invitation to IN PERSON ISACA NTX & IIA Joint Meeting at UT Dallas -Davidson-Gundy Alumni Center
+DTSTART:20260206T090000
+DESCRIPTION:ISACA — North Texas Chapter | City: Dallas | Source: https://engage.isaca.org/northtexaschapter/events/calendar | Registration: https://engage.isaca.org/northtexaschapter/events/eventdescription?CalendarEventKey=e24ed5a9-29ce-4506-9e91-019bb4890c99&CommunityKey=216d5192-1574-4421-9bfa-6b470d758889&Home=%2fnorthtexaschapter%2fevents%2fcalendar
+URL:https://engage.isaca.org/northtexaschapter/events/eventdescription?CalendarEventKey=e24ed5a9-29ce-4506-9e91-019bb4890c99&CommunityKey=216d5192-1574-4421-9bfa-6b470d758889&Home=%2fnorthtexaschapter%2fevents%2fcalendar
+END:VEVENT
+BEGIN:VEVENT
+UID:3df9a96c70903336@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:Use the "Show Filter" button below to search for more events:
+DTSTART:20260206T090000
+DESCRIPTION:ISACA — North Texas Chapter | City: Dallas | Source: https://engage.isaca.org/northtexaschapter/events/calendar | Registration: https://engage.isaca.org/northtexaschapter/events/calendar#MainCopy_ctl07_CalendarEventsList_AddTagAnchorLink_0
+URL:https://engage.isaca.org/northtexaschapter/events/calendar#MainCopy_ctl07_CalendarEventsList_AddTagAnchorLink_0
+END:VEVENT
+BEGIN:VEVENT
+UID:8692f02eb07f0192@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:When: Feb 6\, 2026 from 09:00 to 14:15 (CT) Where: UT Dallas
+DTSTART:20260206T090000
+DESCRIPTION:ISACA — North Texas Chapter | City: Dallas | Source: https://engage.isaca.org/northtexaschapter/events/calendar | Registration: https://engage.isaca.org/northtexaschapter/home
+URL:https://engage.isaca.org/northtexaschapter/home
+END:VEVENT
+BEGIN:VEVENT
+UID:8a6ecb129edcf966@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:February 2026 Quarterly Meeting - Women In Tech Feb 17\, 2026\, 12:00
+DTSTART:20260217T120000
+DESCRIPTION:ISSA — Alamo (San Antonio) | City: San Antonio | Source: https://www.alamoissa.org/event-list | Registration: https://www.alamoissa.org/event-details/february-2026-quarterly-meeting-women-in-tech
+URL:https://www.alamoissa.org/event-details/february-2026-quarterly-meeting-women-in-tech
+END:VEVENT
+BEGIN:VEVENT
+UID:bf44fbcab06852bf@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:Chapter Events List
+DTSTART:20260225T113000
+DESCRIPTION:ISACA — San Antonio Chapter | City: Dallas | Source: https://engage.isaca.org/sanantoniochapter/events/calendar | Registration: https://engage.isaca.org/sanantoniochapter/events/calendar#MPContentArea
+URL:https://engage.isaca.org/sanantoniochapter/events/calendar#MPContentArea
+END:VEVENT
+BEGIN:VEVENT
+UID:d7c7f8b84defa82d@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:Chapter Events List
+DTSTART:20260225T113000
+DESCRIPTION:ISACA — San Antonio Chapter | City: Dallas | Source: https://engage.isaca.org/sanantoniochapter/events/calendar | Registration: https://engage.isaca.org/sanantoniochapter/events/calendar#MainCopy_ctl06_CalendarEventsList_AddTagAnchorLink_0
+URL:https://engage.isaca.org/sanantoniochapter/events/calendar#MainCopy_ctl06_CalendarEventsList_AddTagAnchorLink_0
+END:VEVENT
+BEGIN:VEVENT
+UID:491cb442b8a6a2be@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:February 2026
+DTSTART:20260225T113000
+DESCRIPTION:ISACA — San Antonio Chapter | City: Dallas | Source: https://engage.isaca.org/sanantoniochapter/events/calendar | Registration: https://engage.isaca.org/sanantoniochapter/events/calendar#MainCopy_ctl06_CalendarEventsList_AddTagAnchorLink_0
+URL:https://engage.isaca.org/sanantoniochapter/events/calendar#MainCopy_ctl06_CalendarEventsList_AddTagAnchorLink_0
+END:VEVENT
+BEGIN:VEVENT
+UID:c266331a5c50fa02@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:San Antonio ISACA/San Antonio IIA Joint Chapter Meeting: The Intersection of Fraud Prevention and Cy
+DTSTART:20260225T113000
+DESCRIPTION:ISACA — San Antonio Chapter | City: San Antonio | Source: https://engage.isaca.org/sanantoniochapter/events/calendar | Registration: https://engage.isaca.org/sanantoniochapter/events/eventdescription?CalendarEventKey=582d5036-d717-4444-b747-019aea13110c&CommunityKey=055116bc-6d30-4517-a6d0-2dc87e2f5c36&Home=%2fsanantoniochapter%2fevents%2fcalendar
+URL:https://engage.isaca.org/sanantoniochapter/events/eventdescription?CalendarEventKey=582d5036-d717-4444-b747-019aea13110c&CommunityKey=055116bc-6d30-4517-a6d0-2dc87e2f5c36&Home=%2fsanantoniochapter%2fevents%2fcalendar
+END:VEVENT
+BEGIN:VEVENT
+UID:2a0148756020b617@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:Use the "Show Filter" button below to search for more events:
+DTSTART:20260225T113000
+DESCRIPTION:ISACA — San Antonio Chapter | City: Dallas | Source: https://engage.isaca.org/sanantoniochapter/events/calendar | Registration: https://engage.isaca.org/sanantoniochapter/events/calendar#MainCopy_ctl06_CalendarEventsList_AddTagAnchorLink_0
+URL:https://engage.isaca.org/sanantoniochapter/events/calendar#MainCopy_ctl06_CalendarEventsList_AddTagAnchorLink_0
+END:VEVENT
+BEGIN:VEVENT
+UID:e97c690736e3dd28@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:When: Feb 25\, 2026 from 11:30 to 13:30 (CT) Where: Alamo Cafe\,
+DTSTART:20260225T113000
+DESCRIPTION:ISACA — San Antonio Chapter | City: San Antonio | Source: https://engage.isaca.org/sanantoniochapter/events/calendar | Registration: https://engage.isaca.org/sanantoniochapter/home
+URL:https://engage.isaca.org/sanantoniochapter/home
+END:VEVENT
+BEGIN:VEVENT
+UID:c9e0ff1d7ae0f740@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:Chapter Events List
+DTSTART:20260226T120000
+DESCRIPTION:ISACA — Austin Chapter | City: Dallas | Source: https://engage.isaca.org/austinchapter/events/calendar | Registration: https://engage.isaca.org/austinchapter/events/calendar#MPContentArea
+URL:https://engage.isaca.org/austinchapter/events/calendar#MPContentArea
+END:VEVENT
+BEGIN:VEVENT
+UID:8dda211370c06fcf@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:Chapter Events List
+DTSTART:20260226T120000
+DESCRIPTION:ISACA — Austin Chapter | City: Dallas | Source: https://engage.isaca.org/austinchapter/events/calendar | Registration: https://engage.isaca.org/austinchapter/events/calendar#MainCopy_ctl06_CalendarEventsList_AddTagAnchorLink_0
+URL:https://engage.isaca.org/austinchapter/events/calendar#MainCopy_ctl06_CalendarEventsList_AddTagAnchorLink_0
+END:VEVENT
+BEGIN:VEVENT
+UID:ea7522f615458659@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:Compass IT Compliance Free Webinar: The GRC Loop: Why Your Security Controls Keep Failing the Same T
+DTSTART:20260226T120000
+DESCRIPTION:ISACA — San Antonio Chapter | City: San Antonio | Source: https://engage.isaca.org/sanantoniochapter/events/calendar | Registration: https://engage.isaca.org/sanantoniochapter/events/eventdescription?CalendarEventKey=02845a5c-b35f-4b40-aa84-019b08b51b96&CommunityKey=055116bc-6d30-4517-a6d0-2dc87e2f5c36&Home=%2fsanantoniochapter%2fevents%2fcalendar
+URL:https://engage.isaca.org/sanantoniochapter/events/eventdescription?CalendarEventKey=02845a5c-b35f-4b40-aa84-019b08b51b96&CommunityKey=055116bc-6d30-4517-a6d0-2dc87e2f5c36&Home=%2fsanantoniochapter%2fevents%2fcalendar
+END:VEVENT
+BEGIN:VEVENT
+UID:5d6cb96ac17b53ea@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:February 2026
+DTSTART:20260226T120000
+DESCRIPTION:ISACA — Austin Chapter | City: Dallas | Source: https://engage.isaca.org/austinchapter/events/calendar | Registration: https://engage.isaca.org/austinchapter/events/calendar#MainCopy_ctl06_CalendarEventsList_AddTagAnchorLink_0
+URL:https://engage.isaca.org/austinchapter/events/calendar#MainCopy_ctl06_CalendarEventsList_AddTagAnchorLink_0
+END:VEVENT
+BEGIN:VEVENT
+UID:e7bc30a9aa12b106@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:Use the "Show Filter" button below to search for more events:
+DTSTART:20260226T120000
+DESCRIPTION:ISACA — Austin Chapter | City: Dallas | Source: https://engage.isaca.org/austinchapter/events/calendar | Registration: https://engage.isaca.org/austinchapter/events/calendar#MainCopy_ctl06_CalendarEventsList_AddTagAnchorLink_0
+URL:https://engage.isaca.org/austinchapter/events/calendar#MainCopy_ctl06_CalendarEventsList_AddTagAnchorLink_0
+END:VEVENT
+BEGIN:VEVENT
+UID:c052e29b42e9adc6@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:Virtual: The GRC Loop: Why Your Security Controls Keep Failing the Same Tests
+DTSTART:20260226T120000
+DESCRIPTION:ISACA — Austin Chapter | City: Austin | Source: https://engage.isaca.org/austinchapter/events/calendar | Registration: https://engage.isaca.org/austinchapter/events/eventdescription?CalendarEventKey=b979b369-bf86-49ff-a0fd-019b0573e3c2&CommunityKey=1cb84d21-5119-48d6-8801-3dcb8ebb5c1c&Home=%2faustinchapter%2fevents%2fcalendar
+URL:https://engage.isaca.org/austinchapter/events/eventdescription?CalendarEventKey=b979b369-bf86-49ff-a0fd-019b0573e3c2&CommunityKey=1cb84d21-5119-48d6-8801-3dcb8ebb5c1c&Home=%2faustinchapter%2fevents%2fcalendar
+END:VEVENT
+BEGIN:VEVENT
+UID:1da9fb1ddc13403c@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:When: Feb 26\, 2026 from 12:00 to 13:00 (CT) Community: Austin Chapter
+DTSTART:20260226T120000
+DESCRIPTION:ISACA — Austin Chapter | City: Austin | Source: https://engage.isaca.org/austinchapter/events/calendar | Registration: https://engage.isaca.org/austinchapter/home
+URL:https://engage.isaca.org/austinchapter/home
+END:VEVENT
+BEGIN:VEVENT
+UID:b06080a26b48e89f@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:When: Feb 26\, 2026 from 12:00 to 13:00 (CT) Community: San Antonio
+DTSTART:20260226T120000
+DESCRIPTION:ISACA — San Antonio Chapter | City: San Antonio | Source: https://engage.isaca.org/sanantoniochapter/events/calendar | Registration: https://engage.isaca.org/sanantoniochapter/home
+URL:https://engage.isaca.org/sanantoniochapter/home
+END:VEVENT
+BEGIN:VEVENT
+UID:4495f8096b3442a4@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:CS4CA USA - Cyber Security for Critical Assets Summit
+DTSTART:20260310T080000
+DESCRIPTION:ISACA — San Antonio Chapter | City: Houston | Source: https://engage.isaca.org/sanantoniochapter/events/calendar | Registration: https://engage.isaca.org/sanantoniochapter/events/eventdescription?CalendarEventKey=38288399-ec99-4751-b43a-019b4b9efd13&CommunityKey=055116bc-6d30-4517-a6d0-2dc87e2f5c36&Home=%2fsanantoniochapter%2fevents%2fcalendar
+URL:https://engage.isaca.org/sanantoniochapter/events/eventdescription?CalendarEventKey=38288399-ec99-4751-b43a-019b4b9efd13&CommunityKey=055116bc-6d30-4517-a6d0-2dc87e2f5c36&Home=%2fsanantoniochapter%2fevents%2fcalendar
+END:VEVENT
+BEGIN:VEVENT
+UID:9be33e4cc8b2e1b7@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:Starts: Mar 10\, 2026 08:00 (CT) Ends: Mar 11\, 2026 17:00 (CT)
+DTSTART:20260310T080000
+DESCRIPTION:ISACA — San Antonio Chapter | City: Houston | Source: https://engage.isaca.org/sanantoniochapter/events/calendar | Registration: https://engage.isaca.org/sanantoniochapter/home
+URL:https://engage.isaca.org/sanantoniochapter/home
+END:VEVENT
+BEGIN:VEVENT
+UID:14a7bfa45c532557@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:Compass IT Compliance Free Webinar: The DIY Security Audit: How to Test Your Facility's Physical Def
+DTSTART:20260324T120000
+DESCRIPTION:ISACA — San Antonio Chapter | City: San Antonio | Source: https://engage.isaca.org/sanantoniochapter/events/calendar | Registration: https://engage.isaca.org/sanantoniochapter/events/eventdescription?CalendarEventKey=1c83d779-a0a2-44a5-abd1-019b08b9997a&CommunityKey=055116bc-6d30-4517-a6d0-2dc87e2f5c36&Home=%2fsanantoniochapter%2fevents%2fcalendar
+URL:https://engage.isaca.org/sanantoniochapter/events/eventdescription?CalendarEventKey=1c83d779-a0a2-44a5-abd1-019b08b9997a&CommunityKey=055116bc-6d30-4517-a6d0-2dc87e2f5c36&Home=%2fsanantoniochapter%2fevents%2fcalendar
+END:VEVENT
+BEGIN:VEVENT
+UID:33ed4cb19a71f64d@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:Virtual: The DIY Security Audit: How to Test Your Facility's Physical Defenses
+DTSTART:20260324T120000
+DESCRIPTION:ISACA — Austin Chapter | City: Austin | Source: https://engage.isaca.org/austinchapter/events/calendar | Registration: https://engage.isaca.org/austinchapter/events/eventdescription?CalendarEventKey=55ae3a98-b6d9-46c3-aa49-019b05795f97&CommunityKey=1cb84d21-5119-48d6-8801-3dcb8ebb5c1c&Home=%2faustinchapter%2fevents%2fcalendar
+URL:https://engage.isaca.org/austinchapter/events/eventdescription?CalendarEventKey=55ae3a98-b6d9-46c3-aa49-019b05795f97&CommunityKey=1cb84d21-5119-48d6-8801-3dcb8ebb5c1c&Home=%2faustinchapter%2fevents%2fcalendar
+END:VEVENT
+BEGIN:VEVENT
+UID:775a0f01ec662f4f@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:When: Mar 24\, 2026 from 12:00 to 13:00 (CT) Community: Austin Chapter
+DTSTART:20260324T120000
+DESCRIPTION:ISACA — Austin Chapter | City: Austin | Source: https://engage.isaca.org/austinchapter/events/calendar | Registration: https://engage.isaca.org/austinchapter/home
+URL:https://engage.isaca.org/austinchapter/home
+END:VEVENT
+BEGIN:VEVENT
+UID:c4b1b493f869756b@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:When: Mar 24\, 2026 from 12:00 to 13:00 (CT) Community: San Antonio
+DTSTART:20260324T120000
+DESCRIPTION:ISACA — San Antonio Chapter | City: San Antonio | Source: https://engage.isaca.org/sanantoniochapter/events/calendar | Registration: https://engage.isaca.org/sanantoniochapter/home
+URL:https://engage.isaca.org/sanantoniochapter/home
+END:VEVENT
+BEGIN:VEVENT
+UID:88e753a7510442a6@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:Compass IT Compliance: Governing the Ungovernable: A Framework for AI Risk Management
+DTSTART:20260423T120000
+DESCRIPTION:ISACA — San Antonio Chapter | City: San Antonio | Source: https://engage.isaca.org/sanantoniochapter/events/calendar | Registration: https://engage.isaca.org/sanantoniochapter/events/eventdescription?CalendarEventKey=c98570cd-08cf-48df-af69-019b08c49225&CommunityKey=055116bc-6d30-4517-a6d0-2dc87e2f5c36&Home=%2fsanantoniochapter%2fevents%2fcalendar
+URL:https://engage.isaca.org/sanantoniochapter/events/eventdescription?CalendarEventKey=c98570cd-08cf-48df-af69-019b08c49225&CommunityKey=055116bc-6d30-4517-a6d0-2dc87e2f5c36&Home=%2fsanantoniochapter%2fevents%2fcalendar
+END:VEVENT
+BEGIN:VEVENT
+UID:a87b1eba076952f6@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:Virtual: Governing the Ungovernable: A Framework for AI Risk Management
+DTSTART:20260423T120000
+DESCRIPTION:ISACA — Austin Chapter | City: Austin | Source: https://engage.isaca.org/austinchapter/events/calendar | Registration: https://engage.isaca.org/austinchapter/events/eventdescription?CalendarEventKey=4dae3bb4-4be4-4a75-b93b-019b0583861d&CommunityKey=1cb84d21-5119-48d6-8801-3dcb8ebb5c1c&Home=%2faustinchapter%2fevents%2fcalendar
+URL:https://engage.isaca.org/austinchapter/events/eventdescription?CalendarEventKey=4dae3bb4-4be4-4a75-b93b-019b0583861d&CommunityKey=1cb84d21-5119-48d6-8801-3dcb8ebb5c1c&Home=%2faustinchapter%2fevents%2fcalendar
+END:VEVENT
+BEGIN:VEVENT
+UID:275d7ab0132b0dcf@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:When: Apr 23\, 2026 from 12:00 to 13:00 (CT) Community: Austin Chapter
+DTSTART:20260423T120000
+DESCRIPTION:ISACA — Austin Chapter | City: Austin | Source: https://engage.isaca.org/austinchapter/events/calendar | Registration: https://engage.isaca.org/austinchapter/home
+URL:https://engage.isaca.org/austinchapter/home
+END:VEVENT
+BEGIN:VEVENT
+UID:fce2c1c518b5ad98@txcyberevents
+DTSTAMP:20260129T232821Z
+SUMMARY:When: Apr 23\, 2026 from 12:00 to 13:00 (CT) Community: San Antonio
+DTSTART:20260423T120000
+DESCRIPTION:ISACA — San Antonio Chapter | City: San Antonio | Source: https://engage.isaca.org/sanantoniochapter/events/calendar | Registration: https://engage.isaca.org/sanantoniochapter/home
+URL:https://engage.isaca.org/sanantoniochapter/home
+END:VEVENT
+END:VCALENDAR
