@@ -10,7 +10,8 @@ jobs:
   run:
     runs-on: ubuntu-latest
     permissions:
-      contents: write   # only needed if you choose to auto-commit outputs
+      contents: write
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -29,21 +30,11 @@ jobs:
         run: |
           python collect_events.py
 
-      # Option B: Upload artifacts (default-safe)
-      - name: Upload outputs
-        uses: actions/upload-artifact@v4
-        with:
-          name: weekly-export
-          path: |
-            events.csv
-            events.ics
-            run_log.json
+      - name: Commit outputs
+        run: |
+          git config user.name "tx-cyber-events-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add events.csv events.ics run_log.json
+          git commit -m "Weekly export" || echo "No changes to commit"
+          git push
 
-      # Option A: Auto-commit outputs back to repo (uncomment to enable)
-      # - name: Commit outputs
-      #   run: |
-      #     git config user.name "tx-cyber-events-bot"
-      #     git config user.email "actions@users.noreply.github.com"
-      #     git add events.csv events.ics run_log.json
-      #     git commit -m "Weekly export" || echo "No changes to commit"
-      #     git push
