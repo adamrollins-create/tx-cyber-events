@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
 """
-Texas Cyber Events Monitor (rewritten)
+Texas Cyber Events Monitor (from scratch)
 - Fetches a fixed list of event source URLs
 - Extracts upcoming events in next 90 days
 - Filters to Dallas / North Texas, Austin, Houston, San Antonio
 - Includes virtual events only when clearly tied to a metro
 - Deduplicates by (title + start_date + registration_url)
 - Outputs: events.csv and events.ics
-- Writes detailed run_log.json and saves debug HTML snapshots for troubleshooting
+- Writes run_log.json and saves debug HTML snapshots for troubleshooting
 
-Important:
+Note:
 - This script does NOT invent events. If a source appears JS-rendered/bot-protected,
-  it records needs_manual_review and stores the fetched HTML for inspection.
+  it logs needs_manual_review and saves HTML for inspection.
 """
 
 from __future__ import annotations
@@ -19,11 +19,10 @@ from __future__ import annotations
 import csv
 import hashlib
 import json
-import os
 import re
 import sys
 import time
-from dataclasses import asdict, dataclass
+from dataclasses import dataclass
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
@@ -45,7 +44,7 @@ DEBUG_DIR.mkdir(exist_ok=True)
 
 SLEEP_BETWEEN_SOURCES_SEC = 0.75
 FETCH_TIMEOUT_SEC = 30
-MAX_CANDIDATES_PER_SOURCE = 120
+MAX_CANDIDATES_PER_SOURCE = 140
 
 USER_AGENT = (
     "Mozilla/5.0 (X11; Linux x86_64) "
@@ -105,14 +104,21 @@ SOURCES: List[Tuple[str, str, str]] = [
     ("Directory", "CyberRisk Alliance Events", "https://cyberriskalliance.com/events"),
 ]
 
-# Sites that are frequently JS-rendered / bot-protected (heuristic only)
-LIKELY_JS_OR_BLOCKED_HOST_KEYWORDS = [
-    "meetup.com",
-    "eventbrite.com",
+LIKELY_JS_HOST_KEYWORDS = ["meetup.com", "eventbrite.com"]
+
+BLOCK_MARKERS = [
+    "cloudflare",
+    "access denied",
+    "captcha",
+    "enable javascript",
+    "attention required",
+    "incapsula",
+    "ddos",
+    "akamai",
 ]
 
 
-# ----------------- Data model -----------------
+# ----------------- Model -----------------
 @dataclass
 class Event:
     org: str
@@ -120,7 +126,7 @@ class Event:
     city: str
     event_title: str
     start_date: str  # YYYY-MM-DD
-    start_time: str  # HH:MM (24h) or ""
+    start_time: str  # HH:MM or ""
     end_date: str
     end_time: str
     venue: str
@@ -132,9 +138,8 @@ class Event:
 def utc_iso() -> str:
     return datetime.utcnow().isoformat(timespec="seconds") + "Z"
 
-def today_local() -> datetime:
-    # Naive local time is fine for a rolling 90-day window.
-    return datetime.now()
+def today_local_midnight() -> datetime:
+    return datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
 
 def clean_ws(s: str) -> str:
     return re.sub(r"\s+", " ", (s or "").strip())
@@ -153,17 +158,25 @@ def is_virtual(text: str) -> bool:
     t = (text or "").lower()
     return any(k in t for k in ["virtual", "online", "zoom", "webinar", "teams", "remote"])
 
-def is_likely_js_or_blocked(url: str) -> bool:
+def is_likely_js(url: str) -> bool:
     u = (url or "").lower()
-    return any(k in u for k in LIKELY_JS_OR_BLOCKED_HOST_KEYWORDS)
+    return any(k in u for k in LIKELY_JS_HOST_KEYWORDS)
 
 def within_window(dt: datetime, start: datetime, end: datetime) -> bool:
     return start <= dt <= end
 
+def normalize_url(href: str, base: str) -> str:
+    href = (href or "").strip()
+    if not href:
+        return ""
+    if href.startswith("http://") or href.startswith("https://"):
+        return href
+    return urljoin(base, href)
 
-# Date parsing
+
+# ----------------- Date/time parsing -----------------
 DATE_ISO = re.compile(r"\b(20\d{2})-(\d{2})-(\d{2})\b")
-DATE_MDY_SLASH = re.compile(r"\b(\d{1,2})/(\d{1,2})/(20\d{2})\b")  # 2/19/2026
+DATE_MDY_SLASH = re.compile(r"\b(\d{1,2})/(\d{1,2})/(20\d{2})\b")
 DATE_MON_NAME = re.compile(
     r"\b(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|"
     r"Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Sept|Oct(?:ober)?|Nov(?:ember)?|"
@@ -190,6 +203,7 @@ TIME_RE = re.compile(r"\b(\d{1,2})(?::(\d{2}))?\s*(am|pm)?\b", re.I)
 
 def parse_first_date(text: str) -> Optional[datetime]:
     t = text or ""
+
     m = DATE_ISO.search(t)
     if m:
         y, mo, d = int(m.group(1)), int(m.group(2)), int(m.group(3))
@@ -214,8 +228,6 @@ def parse_first_date(text: str) -> Optional[datetime]:
     return None
 
 def parse_first_time(text: str) -> str:
-    # Heuristic: find something time-like with optional minutes, optional am/pm
-    # Examples: "6 pm", "6:30pm", "18:30"
     t = (text or "").lower()
     m = TIME_RE.search(t)
     if not m:
@@ -224,7 +236,6 @@ def parse_first_time(text: str) -> str:
     mm = int(m.group(2) or "00")
     ap = (m.group(3) or "").lower()
 
-    # If no am/pm and hh > 23 treat as invalid
     if not ap and hh > 23:
         return ""
 
@@ -237,23 +248,10 @@ def parse_first_time(text: str) -> str:
         return ""
     return f"{hh:02d}:{mm:02d}"
 
-def make_uid(ev: Event) -> str:
-    raw = f"{ev.event_title}|{ev.start_date}|{ev.registration_url}"
-    return hashlib.sha1(raw.encode("utf-8")).hexdigest()[:16] + "@txcyberevents"
 
-
-def normalize_url(href: str, base: str) -> str:
-    href = (href or "").strip()
-    if not href:
-        return ""
-    if href.startswith("http://") or href.startswith("https://"):
-        return href
-    return urljoin(base, href)
-
-
+# ----------------- Dedupe/sort -----------------
 def event_key(ev: Event) -> Tuple[str, str, str]:
     return (ev.event_title.strip().lower(), ev.start_date, ev.registration_url.strip().lower())
-
 
 def dedupe(events: List[Event]) -> List[Event]:
     seen = set()
@@ -266,25 +264,11 @@ def dedupe(events: List[Event]) -> List[Event]:
         out.append(ev)
     return out
 
-
 def sort_events(events: List[Event]) -> List[Event]:
-    def k(ev: Event):
-        return (ev.start_date, ev.start_time or "00:00", ev.event_title.lower())
-    return sorted(events, key=k)
+    return sorted(events, key=lambda e: (e.start_date, e.start_time or "00:00", e.event_title.lower()))
 
 
-# ----------------- Fetch with diagnostics -----------------
-BLOCK_MARKERS = [
-    "cloudflare",
-    "access denied",
-    "captcha",
-    "enable javascript",
-    "attention required",
-    "incapsula",
-    "ddos",
-    "akamai",
-]
-
+# ----------------- Fetch + debug -----------------
 def save_html_snapshot(source_key: str, url: str, html: str) -> str:
     h = hashlib.sha256(url.encode("utf-8")).hexdigest()[:10]
     path = DEBUG_DIR / f"{slug(source_key)}_{h}.html"
@@ -303,39 +287,19 @@ def fetch(session: requests.Session, url: str) -> Tuple[Optional[requests.Respon
 
 # ----------------- Parsing -----------------
 def extract_candidate_blocks(soup: BeautifulSoup) -> List:
-    """
-    A wide net:
-    - common event card containers
-    - list items
-    - table rows
-    - articles/sections
-    Then we later filter blocks that contain a parsable date.
-    """
     selectors = [
-        "article",
-        "li",
-        "tr",
-        ".event",
-        ".events",
-        ".event-item",
-        ".eventCard",
-        ".tribe-events-calendar-list__event",
-        ".tribe-events-calendar-list__event-row",
-        ".views-row",
-        ".ai1ec-event",
-        ".calendar-event",
-        ".post",
-        ".type-tribe_events",
+        "article", "li", "tr", "section",
+        ".event", ".events", ".event-item", ".eventCard",
+        ".tribe-events-calendar-list__event", ".tribe-events-calendar-list__event-row",
+        ".views-row", ".ai1ec-event", ".calendar-event",
+        ".post", ".type-tribe_events",
     ]
     blocks = []
     for sel in selectors:
         blocks.extend(soup.select(sel))
-
-    # fallback: if nothing matched, scan likely containers
     if not blocks:
         blocks = soup.find_all(["article", "section", "div", "li", "tr"])
-
-    # De-dupe by object id
+    # de-dupe by id
     seen = set()
     uniq = []
     for b in blocks:
@@ -344,7 +308,7 @@ def extract_candidate_blocks(soup: BeautifulSoup) -> List:
             continue
         seen.add(i)
         uniq.append(b)
-    return uniq[: MAX_CANDIDATES_PER_SOURCE]
+    return uniq[:MAX_CANDIDATES_PER_SOURCE]
 
 def find_best_title(block) -> str:
     for tag in ["h1", "h2", "h3", "h4"]:
@@ -353,18 +317,15 @@ def find_best_title(block) -> str:
             t = clean_ws(h.get_text(" "))
             if len(t) >= 4:
                 return t
-    # fallback: first anchor with meaningful text
     a = block.find("a")
     if a:
         t = clean_ws(a.get_text(" "))
         if len(t) >= 4:
             return t
-    # fallback: first 10 words of block
     txt = clean_ws(block.get_text(" "))
     return " ".join(txt.split()[:10])
 
 def find_best_link(block, source_url: str) -> str:
-    # Prefer anchor that looks like registration/details, else first href
     anchors = block.find_all("a", href=True)
     if not anchors:
         return ""
@@ -375,8 +336,7 @@ def find_best_link(block, source_url: str) -> str:
         if any(k in text for k in ["register", "registration", "rsvp", "details", "learn more", "tickets"]):
             preferred = href
             break
-    href = preferred or anchors[0].get("href", "")
-    return normalize_url(href, source_url)
+    return normalize_url(preferred or anchors[0].get("href", ""), source_url)
 
 def build_events_from_html(
     org: str,
@@ -389,7 +349,7 @@ def build_events_from_html(
     candidates = extract_candidate_blocks(soup)
     per_source_log["candidates_total"] = len(candidates)
 
-    start = today_local().replace(hour=0, minute=0, second=0, microsecond=0)
+    start = today_local_midnight()
     end = start + timedelta(days=DAYS_AHEAD)
 
     events: List[Event] = []
@@ -422,7 +382,6 @@ def build_events_from_html(
 
         reg_url = find_best_link(b, source_url)
 
-        # Metro / virtual policy
         city = guess_metro(txt) or guess_metro(group) or ""
         virtual = is_virtual(txt)
         if virtual and not city:
@@ -434,7 +393,7 @@ def build_events_from_html(
 
         st_time = parse_first_time(txt)
 
-        ev = Event(
+        events.append(Event(
             org=org,
             group=group,
             city=city,
@@ -446,8 +405,7 @@ def build_events_from_html(
             venue="",
             registration_url=reg_url,
             source_url=source_url,
-        )
-        events.append(ev)
+        ))
 
     per_source_log["dated_blocks"] = dated_blocks
     per_source_log["events_kept"] = len(events)
@@ -455,7 +413,7 @@ def build_events_from_html(
     return events
 
 
-# ----------------- Output writers -----------------
+# ----------------- Outputs -----------------
 CSV_HEADERS = [
     "org",
     "group/chapter",
@@ -476,22 +434,19 @@ def write_csv(events: List[Event], path: str) -> None:
         w.writerow(CSV_HEADERS)
         for ev in events:
             w.writerow([
-                ev.org,
-                ev.group,
-                ev.city,
-                ev.event_title,
-                ev.start_date,
-                ev.start_time,
-                ev.end_date,
-                ev.end_time,
-                ev.venue,
-                ev.registration_url,
-                ev.source_url,
+                ev.org, ev.group, ev.city, ev.event_title,
+                ev.start_date, ev.start_time,
+                ev.end_date, ev.end_time,
+                ev.venue, ev.registration_url, ev.source_url,
             ])
 
 def ics_escape(s: str) -> str:
     s = s or ""
     return s.replace("\\", "\\\\").replace(";", "\\;").replace(",", "\\,").replace("\n", "\\n")
+
+def make_uid(ev: Event) -> str:
+    raw = f"{ev.event_title}|{ev.start_date}|{ev.registration_url}"
+    return hashlib.sha1(raw.encode("utf-8")).hexdigest()[:16] + "@txcyberevents"
 
 def write_ics(events: List[Event], path: str) -> None:
     lines = [
@@ -503,22 +458,19 @@ def write_ics(events: List[Event], path: str) -> None:
     dtstamp = datetime.utcnow().strftime("%Y%m%dT%H%M%SZ")
 
     for ev in events:
-        # Floating local time (no TZID) for simplicity.
         if ev.start_time:
             dtstart = ev.start_date.replace("-", "") + "T" + ev.start_time.replace(":", "") + "00"
-        else:
-            dtstart = ev.start_date.replace("-", "")  # all-day
-
-        lines += [
-            "BEGIN:VEVENT",
-            f"UID:{make_uid(ev)}",
-            f"DTSTAMP:{dtstamp}",
-            f"SUMMARY:{ics_escape(ev.event_title)}",
-        ]
-
-        if ev.start_time:
+            lines.append("BEGIN:VEVENT")
+            lines.append(f"UID:{make_uid(ev)}")
+            lines.append(f"DTSTAMP:{dtstamp}")
+            lines.append(f"SUMMARY:{ics_escape(ev.event_title)}")
             lines.append(f"DTSTART:{dtstart}")
         else:
+            dtstart = ev.start_date.replace("-", "")
+            lines.append("BEGIN:VEVENT")
+            lines.append(f"UID:{make_uid(ev)}")
+            lines.append(f"DTSTAMP:{dtstamp}")
+            lines.append(f"SUMMARY:{ics_escape(ev.event_title)}")
             lines.append(f"DTSTART;VALUE=DATE:{dtstart}")
 
         desc_parts = [
@@ -536,7 +488,7 @@ def write_ics(events: List[Event], path: str) -> None:
         if ev.registration_url:
             lines.append(f"URL:{ics_escape(ev.registration_url)}")
 
-        lines += ["END:VEVENT"]
+        lines.append("END:VEVENT")
 
     lines.append("END:VCALENDAR")
 
@@ -560,28 +512,33 @@ def main() -> int:
         "sources_total": len(SOURCES),
         "events_extracted_raw": 0,
         "events_extracted_deduped": 0,
-        "sources": {},  # per-source structured logs
+        "sources": {},
         "sources_failed": [],
         "needs_manual_review": [],
     }
 
     all_events: List[Event] = []
+    start = today_local_midnight()
+    end = start + timedelta(days=DAYS_AHEAD)
 
     for org, group, url in SOURCES:
         source_key = f"{org} | {group}"
-        per = {
+        per: Dict = {
             "org": org,
             "group": group,
             "source_url": url,
             "fetched_at": utc_iso(),
+            "window_start": start.date().isoformat(),
+            "window_end": end.date().isoformat(),
         }
+
         t0 = time.time()
         resp, err = fetch(session, url)
         per["fetch_seconds"] = round(time.time() - t0, 2)
 
         if resp is None:
             per["fetch_error"] = err
-            log["sources_failed"].append({"source_url": url, "error": err})
+            log["sources_failed"].append({"source_key": source_key, "source_url": url, "error": err})
             log["sources"][source_key] = per
             time.sleep(SLEEP_BETWEEN_SOURCES_SEC)
             continue
@@ -592,17 +549,17 @@ def main() -> int:
         per["bytes"] = len(resp.content or b"")
 
         html = resp.text or ""
-        head = (html[:800] or "").lower()
+        head = (html[:900] or "").lower()
+
         per["blocked_markers"] = [m for m in BLOCK_MARKERS if m in head]
         per["blocked"] = bool(per["blocked_markers"])
         per["tiny_html"] = len(html) < 4000
 
-        # Save snapshots when anything looks off
         if err or per["blocked"] or per["tiny_html"] or resp.status_code != 200:
             per["saved_html"] = save_html_snapshot(source_key, url, html)
 
-        # If it looks JS-rendered/bot-protected, don’t pretend: record manual review
-        if per["blocked"] or (per["tiny_html"] and is_likely_js_or_blocked(url)):
+        # If blocked or a JS shell: mark manual review and skip parsing
+        if per["blocked"] or (per["tiny_html"] and is_likely_js(url)):
             log["needs_manual_review"].append({
                 "source_key": source_key,
                 "source_url": url,
@@ -615,12 +572,10 @@ def main() -> int:
             time.sleep(SLEEP_BETWEEN_SOURCES_SEC)
             continue
 
-        # Parse HTML heuristically
         evs = build_events_from_html(org, group, url, html, per)
         all_events.extend(evs)
 
-        # If we got nothing and this is likely JS-heavy, flag it
-        if not evs and is_likely_js_or_blocked(url):
+        if not evs and is_likely_js(url):
             log["needs_manual_review"].append({
                 "source_key": source_key,
                 "source_url": url,
@@ -649,14 +604,12 @@ def main() -> int:
         print(f"Sources failed: {len(log['sources_failed'])} (see {OUTPUT_LOG})", file=sys.stderr)
     if log["needs_manual_review"]:
         print(f"Needs manual review: {len(log['needs_manual_review'])} (see {OUTPUT_LOG})", file=sys.stderr)
-    if DEBUG_DIR.exists():
-        # Only mention if we actually wrote files
-        wrote_any = any(DEBUG_DIR.glob("*.html"))
-        if wrote_any:
-            print(f"Saved debug HTML snapshots in {DEBUG_DIR}/", file=sys.stderr)
+    if any(DEBUG_DIR.glob('*.html')):
+        print(f"Saved debug HTML snapshots in {DEBUG_DIR}/", file=sys.stderr)
 
     return 0
 
 
 if __name__ == "__main__":
+    # If anything crashes, we still want a traceback in Actions logs.
     raise SystemExit(main())
