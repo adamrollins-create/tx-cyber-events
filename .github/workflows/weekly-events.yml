@@ -30,11 +30,16 @@ jobs:
         run: |
           python collect_events.py
 
-      - name: Commit outputs
-        run: |
-          git config user.name "tx-cyber-events-bot"
-          git config user.email "actions@users.noreply.github.com"
-          git add events.csv events.ics run_log.json
-          git commit -m "Weekly export" || echo "No changes to commit"
-          git push
+      - name: Create Pull Request with outputs
+        uses: peter-evans/create-pull-request@v6
+        with:
+            commit-message: Weekly export
+            title: Weekly export
+            body: Automated update of events.csv, events.ics, run_log.json
+            branch: bot/weekly-export
+            delete-branch: true
+            add-paths: |
+              events.csv
+              events.ics
+              run_log.json
 
