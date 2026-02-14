@@ -3,16 +3,8 @@ VERSION:2.0
 CALSCALE:GREGORIAN
 PRODID:-//Texas Cyber Events Monitor//EN
 BEGIN:VEVENT
-UID:9e0ff7a574a3e8e9@txcyberevents
-DTSTAMP:20260130T161606Z
-SUMMARY:February 2026 ISC2 Alamo Chapter Meeting
-DTSTART:20260205T050000
-DESCRIPTION:(ISC)² — Alamo (San Antonio) | City: San Antonio | Source: https://alamoisc2.org/events | Registration: https://alamoisc2.org/event-6535474
-URL:https://alamoisc2.org/event-6535474
-END:VEVENT
-BEGIN:VEVENT
 UID:d284c75c68e6d4f8@txcyberevents
-DTSTAMP:20260130T161606Z
+DTSTAMP:20260209T154225Z
 SUMMARY:February 2026 Quarterly Meeting - Women In Tech
 DTSTART:20260217T170000
 DESCRIPTION:ISSA — Alamo (San Antonio) | City: San Antonio | Source: https://www.alamoissa.org/event-list | Registration: https://www.alamoissa.org/event-details/february-2026-quarterly-meeting-women-in-tech
@@ -20,7 +12,7 @@ URL:https://www.alamoissa.org/event-details/february-2026-quarterly-meeting-wome
 END:VEVENT
 BEGIN:VEVENT
 UID:23470b62e43658b2@txcyberevents
-DTSTAMP:20260130T161606Z
+DTSTAMP:20260209T154225Z
 SUMMARY:Upcoming Events
 DTSTART:20260217T170000
 DESCRIPTION:ISSA — Alamo (San Antonio) | City: San Antonio | Source: https://www.alamoissa.org/event-list | Registration: https://www.alamoissa.org/event-details/february-2026-quarterly-meeting-women-in-tech
