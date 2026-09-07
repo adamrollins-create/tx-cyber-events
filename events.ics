@@ -3,27 +3,91 @@ VERSION:2.0
 CALSCALE:GREGORIAN
 PRODID:-//Texas Cyber Events Monitor//EN
 BEGIN:VEVENT
-UID:9e0ff7a574a3e8e9@txcyberevents
-DTSTAMP:20260130T161606Z
-SUMMARY:February 2026 ISC2 Alamo Chapter Meeting
-DTSTART:20260205T050000
-DESCRIPTION:(ISC)² — Alamo (San Antonio) | City: San Antonio | Source: https://alamoisc2.org/events | Registration: https://alamoisc2.org/event-6535474
-URL:https://alamoisc2.org/event-6535474
+UID:7cdf10d07f1e74ce@txcyberevents
+DTSTAMP:20260907T175947Z
+SUMMARY:DC512 September Meetup
+DTSTART:20260907T070000
+DESCRIPTION:Meetup — dc512 ATX | City: Austin | Source: https://www.meetup.com/dc512atx/ | Registration: https://www.meetup.com/dc512atx/events/316260061/?eventOrigin=group_upcoming_events
+URL:https://www.meetup.com/dc512atx/events/316260061/?eventOrigin=group_upcoming_events
 END:VEVENT
 BEGIN:VEVENT
-UID:d284c75c68e6d4f8@txcyberevents
-DTSTAMP:20260130T161606Z
-SUMMARY:February 2026 Quarterly Meeting - Women In Tech
-DTSTART:20260217T170000
-DESCRIPTION:ISSA — Alamo (San Antonio) | City: San Antonio | Source: https://www.alamoissa.org/event-list | Registration: https://www.alamoissa.org/event-details/february-2026-quarterly-meeting-women-in-tech
-URL:https://www.alamoissa.org/event-details/february-2026-quarterly-meeting-women-in-tech
+UID:9f34d84e73e0df6d@txcyberevents
+DTSTAMP:20260907T175947Z
+SUMMARY:FinServ Cyber Security UK Summit\, London
+DTSTART:20260909T090000
+DESCRIPTION:Conference — ISMG Dallas Summit | City: Dallas | Source: https://ismg.events/summit/cybersecurity-summit-datasecurity-2025/ | Registration: https://ismg.events/summit/financial-services-london-2026/
+URL:https://ismg.events/summit/financial-services-london-2026/
 END:VEVENT
 BEGIN:VEVENT
-UID:23470b62e43658b2@txcyberevents
-DTSTAMP:20260130T161606Z
+UID:b54e6421d3652ae2@txcyberevents
+DTSTAMP:20260907T175947Z
+SUMMARY:ServiceNow Executive Circle: Identity\, Access and the Agent Estate
+DTSTART:20260909T090000
+DESCRIPTION:Conference — ISMG Dallas Summit | City: Dallas | Source: https://ismg.events/summit/cybersecurity-summit-datasecurity-2025/ | Registration: https://ismg.events/custom-events/identity-access-agent-estate-mumbai/
+URL:https://ismg.events/custom-events/identity-access-agent-estate-mumbai/
+END:VEVENT
+BEGIN:VEVENT
+UID:da2405d26a83c3a8@txcyberevents
+DTSTAMP:20260907T175947Z
+SUMMARY:CYBR.SEC.CON
+DTSTART:20260915T080000
+DESCRIPTION:ONE-ISAC — Industry Events | City: Houston | Source: https://oneisac.org/industry-events/ | Registration: https://oneisac.org/calendar-event/cybr-sec-con/2026-09-15/
+URL:https://oneisac.org/calendar-event/cybr-sec-con/2026-09-15/
+END:VEVENT
+BEGIN:VEVENT
+UID:d905b6eb25b086ea@txcyberevents
+DTSTAMP:20260907T175947Z
+SUMMARY:CYBR.SEC.CON
+DTSTART:20260916T080000
+DESCRIPTION:ONE-ISAC — Industry Events | City: Houston | Source: https://oneisac.org/industry-events/ | Registration: https://oneisac.org/calendar-event/cybr-sec-con/2026-09-15/
+URL:https://oneisac.org/calendar-event/cybr-sec-con/2026-09-15/
+END:VEVENT
+BEGIN:VEVENT
+UID:4a9634a0aa71a4a2@txcyberevents
+DTSTAMP:20260907T175947Z
+SUMMARY:Houston BSides
+DTSTART:20260917T090000
+DESCRIPTION:ONE-ISAC — Industry Events | City: Houston | Source: https://oneisac.org/industry-events/ | Registration: https://oneisac.org/calendar-event/5847/2026-09-17/
+URL:https://oneisac.org/calendar-event/5847/2026-09-17/
+END:VEVENT
+BEGIN:VEVENT
+UID:d2755d3600de6c18@txcyberevents
+DTSTAMP:20260907T175947Z
+SUMMARY:Movie Premier: Midnight in the War Room | Houston\, TX
+DTSTART:20260929T160000
+DESCRIPTION:ONE-ISAC — Industry Events | City: Houston | Source: https://oneisac.org/industry-events/ | Registration: https://oneisac.org/calendar-event/movie-premier-midnight-in-the-war-room-houston-tx/2026-09-29/
+URL:https://oneisac.org/calendar-event/movie-premier-midnight-in-the-war-room-houston-tx/2026-09-29/
+END:VEVENT
+BEGIN:VEVENT
+UID:7621c26bacf14609@txcyberevents
+DTSTAMP:20260907T175947Z
+SUMMARY:October 2026 ISC2 Alamo Chapter Meeting - Hybrid
+DTSTART:20261001T010000
+DESCRIPTION:(ISC)² — Alamo (San Antonio) | City: San Antonio | Source: https://alamoisc2.org/events | Registration: https://alamoisc2.org/event-6812250
+URL:https://alamoisc2.org/event-6812250
+END:VEVENT
+BEGIN:VEVENT
+UID:198da737e2514e6e@txcyberevents
+DTSTAMP:20260907T175947Z
+SUMMARY:Halloween '26 Event
+DTSTART;VALUE=DATE:20261029
+DESCRIPTION:ISSA — Alamo (San Antonio) | City: San Antonio | Source: https://www.alamoissa.org/event-list | Registration: https://www.alamoissa.org/event-details/halloween-26-event
+URL:https://www.alamoissa.org/event-details/halloween-26-event
+END:VEVENT
+BEGIN:VEVENT
+UID:7bafdd4e63fc49b5@txcyberevents
+DTSTAMP:20260907T175947Z
 SUMMARY:Upcoming Events
-DTSTART:20260217T170000
-DESCRIPTION:ISSA — Alamo (San Antonio) | City: San Antonio | Source: https://www.alamoissa.org/event-list | Registration: https://www.alamoissa.org/event-details/february-2026-quarterly-meeting-women-in-tech
-URL:https://www.alamoissa.org/event-details/february-2026-quarterly-meeting-women-in-tech
+DTSTART;VALUE=DATE:20261029
+DESCRIPTION:ISSA — Alamo (San Antonio) | City: San Antonio | Source: https://www.alamoissa.org/event-list | Registration: https://www.alamoissa.org/event-details/halloween-26-event
+URL:https://www.alamoissa.org/event-details/halloween-26-event
+END:VEVENT
+BEGIN:VEVENT
+UID:d2ecb96269d34c32@txcyberevents
+DTSTAMP:20260907T175947Z
+SUMMARY:November 2026 Quarterly Meeting - Emerging Threats In Cybersecurity
+DTSTART:20261117T170000
+DESCRIPTION:ISSA — Alamo (San Antonio) | City: San Antonio | Source: https://www.alamoissa.org/event-list | Registration: https://www.alamoissa.org/event-details/november-2026-quarterly-meeting-emerging-threats-in-cybersecurity
+URL:https://www.alamoissa.org/event-details/november-2026-quarterly-meeting-emerging-threats-in-cybersecurity
 END:VEVENT
 END:VCALENDAR
