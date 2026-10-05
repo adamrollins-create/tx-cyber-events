@@ -3,27 +3,75 @@ VERSION:2.0
 CALSCALE:GREGORIAN
 PRODID:-//Texas Cyber Events Monitor//EN
 BEGIN:VEVENT
-UID:9e0ff7a574a3e8e9@txcyberevents
-DTSTAMP:20260130T161606Z
-SUMMARY:February 2026 ISC2 Alamo Chapter Meeting
-DTSTART:20260205T050000
-DESCRIPTION:(ISC)² — Alamo (San Antonio) | City: San Antonio | Source: https://alamoisc2.org/events | Registration: https://alamoisc2.org/event-6535474
-URL:https://alamoisc2.org/event-6535474
+UID:14ed84218626e4dc@txcyberevents
+DTSTAMP:20261005T205224Z
+SUMMARY:DC512 October Meetup
+DTSTART:20261005T050000
+DESCRIPTION:Meetup — dc512 ATX | City: Austin | Source: https://www.meetup.com/dc512atx/ | Registration: https://www.meetup.com/dc512atx/events/316602225/?eventOrigin=group_upcoming_events
+URL:https://www.meetup.com/dc512atx/events/316602225/?eventOrigin=group_upcoming_events
 END:VEVENT
 BEGIN:VEVENT
-UID:d284c75c68e6d4f8@txcyberevents
-DTSTAMP:20260130T161606Z
-SUMMARY:February 2026 Quarterly Meeting - Women In Tech
-DTSTART:20260217T170000
-DESCRIPTION:ISSA — Alamo (San Antonio) | City: San Antonio | Source: https://www.alamoissa.org/event-list | Registration: https://www.alamoissa.org/event-details/february-2026-quarterly-meeting-women-in-tech
-URL:https://www.alamoissa.org/event-details/february-2026-quarterly-meeting-women-in-tech
+UID:cbd4ef84a58af947@txcyberevents
+DTSTAMP:20261005T205224Z
+SUMMARY:AI for Cybersecurity in 2027
+DTSTART:20261006T060000
+DESCRIPTION:Conference — ISMG Dallas Summit | City: Dallas | Source: https://ismg.events/summit/cybersecurity-summit-datasecurity-2025/ | Registration: https://ismg.events/custom-events/ai-for-cybersecurity-chicago/
+URL:https://ismg.events/custom-events/ai-for-cybersecurity-chicago/
 END:VEVENT
 BEGIN:VEVENT
-UID:23470b62e43658b2@txcyberevents
-DTSTAMP:20260130T161606Z
+UID:63233d5cbd0b53ca@txcyberevents
+DTSTAMP:20261005T205224Z
+SUMMARY:Discussion Circle at World Forum 2026
+DTSTART:20261006T060000
+DESCRIPTION:Conference — ISMG Dallas Summit | City: Dallas | Source: https://ismg.events/summit/cybersecurity-summit-datasecurity-2025/ | Registration: https://ismg.events/custom-events/discussion-circle-at-world-forum-mumbai/
+URL:https://ismg.events/custom-events/discussion-circle-at-world-forum-mumbai/
+END:VEVENT
+BEGIN:VEVENT
+UID:1dfbcb69d329624f@txcyberevents
+DTSTAMP:20261005T205224Z
+SUMMARY:Executive Circle at World Forum Mumbai
+DTSTART:20261006T060000
+DESCRIPTION:Conference — ISMG Dallas Summit | City: Dallas | Source: https://ismg.events/summit/cybersecurity-summit-datasecurity-2025/ | Registration: https://ismg.events/custom-events/executive-circle-at-world-forum-mumbai/
+URL:https://ismg.events/custom-events/executive-circle-at-world-forum-mumbai/
+END:VEVENT
+BEGIN:VEVENT
+UID:366f017f7893bafd@txcyberevents
+DTSTAMP:20261005T205224Z
+SUMMARY:HealthSec NYC Summit
+DTSTART:20261006T060000
+DESCRIPTION:Conference — ISMG Dallas Summit | City: Dallas | Source: https://ismg.events/summit/cybersecurity-summit-datasecurity-2025/ | Registration: https://ismg.events/summit/cybersecurity-summit-healthcare-new-york-11th-edition-2026/
+URL:https://ismg.events/summit/cybersecurity-summit-healthcare-new-york-11th-edition-2026/
+END:VEVENT
+BEGIN:VEVENT
+UID:43c608d7fe29fd53@txcyberevents
+DTSTAMP:20261005T205224Z
+SUMMARY:Halloween Costume Party at Monster Mini Golf
+DTSTART;VALUE=DATE:20261029
+DESCRIPTION:ISSA — Alamo (San Antonio) | City: San Antonio | Source: https://www.alamoissa.org/event-list | Registration: https://www.alamoissa.org/event-details/halloween-costume-party-at-monster-mini-golf
+URL:https://www.alamoissa.org/event-details/halloween-costume-party-at-monster-mini-golf
+END:VEVENT
+BEGIN:VEVENT
+UID:1a6e0b1e5616f92d@txcyberevents
+DTSTAMP:20261005T205224Z
 SUMMARY:Upcoming Events
-DTSTART:20260217T170000
-DESCRIPTION:ISSA — Alamo (San Antonio) | City: San Antonio | Source: https://www.alamoissa.org/event-list | Registration: https://www.alamoissa.org/event-details/february-2026-quarterly-meeting-women-in-tech
-URL:https://www.alamoissa.org/event-details/february-2026-quarterly-meeting-women-in-tech
+DTSTART;VALUE=DATE:20261029
+DESCRIPTION:ISSA — Alamo (San Antonio) | City: San Antonio | Source: https://www.alamoissa.org/event-list | Registration: https://www.alamoissa.org/event-details/halloween-costume-party-at-monster-mini-golf
+URL:https://www.alamoissa.org/event-details/halloween-costume-party-at-monster-mini-golf
+END:VEVENT
+BEGIN:VEVENT
+UID:d2ecb96269d34c32@txcyberevents
+DTSTAMP:20261005T205224Z
+SUMMARY:November 2026 Quarterly Meeting - Emerging Threats In Cybersecurity
+DTSTART:20261117T170000
+DESCRIPTION:ISSA — Alamo (San Antonio) | City: San Antonio | Source: https://www.alamoissa.org/event-list | Registration: https://www.alamoissa.org/event-details/november-2026-quarterly-meeting-emerging-threats-in-cybersecurity
+URL:https://www.alamoissa.org/event-details/november-2026-quarterly-meeting-emerging-threats-in-cybersecurity
+END:VEVENT
+BEGIN:VEVENT
+UID:c2874af815104987@txcyberevents
+DTSTAMP:20261005T205224Z
+SUMMARY:Holiday '26 Event
+DTSTART;VALUE=DATE:20261217
+DESCRIPTION:ISSA — Alamo (San Antonio) | City: San Antonio | Source: https://www.alamoissa.org/event-list | Registration: https://www.alamoissa.org/event-details/holiday-26-event
+URL:https://www.alamoissa.org/event-details/holiday-26-event
 END:VEVENT
 END:VCALENDAR
